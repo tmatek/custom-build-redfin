@@ -7,6 +7,7 @@ services:
       - "./build/logs:/srv/logs"
       - "./build/cache:/srv/cache"
       - "./local_manifests:/srv/local_manifests"
+      - "./scripts:/srv/userscripts"
     environment:
       - "BRANCH_NAME=lineage-18.1"
       - "DEVICE_LIST=redfin"

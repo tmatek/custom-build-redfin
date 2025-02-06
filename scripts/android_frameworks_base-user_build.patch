@@ -1,0 +1,17 @@
+diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
+index 9c71a29af10..646c6a40aae 100644
+--- a/services/core/java/com/android/server/pm/PackageManagerService.java
++++ b/services/core/java/com/android/server/pm/PackageManagerService.java
+@@ -4424,9 +4424,9 @@ public class PackageManagerService extends IPackageManager.Stub
+     private static native boolean isDebuggable();
+ 
+     public static boolean isMicrogSigned(AndroidPackage p) {
+-        if (!isDebuggable()) {
+-            return false;
+-        }
++        // if (!isDebuggable()) {
++        //     return false;
++        // }
+ 
+         // Allowlist the following apps:
+         // * com.android.vending - microG Companion
