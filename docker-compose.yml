@@ -1,11 +1,16 @@
 services:
   lineage-build:
     image: lineageos4microg/docker-lineage-cicd
+    tty: true
+    stdin_open: true
+    entrypoint:
+      - /bin/bash
     volumes:
       - "./build/lineage:/srv/src"
       - "./build/zips:/srv/zips"
       - "./build/logs:/srv/logs"
-      - "./build/cache:/srv/cache"
+      - "./build/cache:/srv/ccache"
+      - "./build/keys:/srv/keys"
       - "./local_manifests:/srv/local_manifests"
       - "./scripts:/srv/userscripts"
     environment:
