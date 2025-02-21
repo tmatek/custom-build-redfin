@@ -6,7 +6,7 @@ Requirements:
 - at least 300 gigs of disk space
 - A decent Debian/Ubuntu machine
 
-First setup the basics:
+Clone this repo. First setup the basics:
 
 ```bash
 source pre-requisites.sh
