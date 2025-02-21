@@ -1,3 +1,9 @@
 .DS_Store
 
-build/
+out/
+keys/
+logs/
+aosp/
+kernel/
+ccache/
+python2/
