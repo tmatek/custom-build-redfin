@@ -25,13 +25,10 @@ sudo apt-get install -y git-core gnupg flex bison build-essential \
   lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
 
 # not mentioned in AOSP build guide
-sudo apt-get install -y ccache rsync libncurses5
+sudo apt-get install -y ccache rsync libncurses5 python-is-python3
 
 # required for building kernel
 sudo apt-get install -y libssl-dev
-
-# required for signing builds
-sudo apt-get install -y android-sdk-build-tools
 
 # install repo tool
 if [ ! $(which repo) ]
@@ -48,18 +45,3 @@ git config --global color.ui false
 
 # setup compiler cache
 ccache -M 50G
-
-# Make sure Python2 is built (from source) and installed globally
-if [ ! -f $PY_DIR/bin/python ]
-then
-  curl https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz > ./Python-2.7.18.tgz
-  tar -xzvf ./Python-2.7.18.tgz
-  rm -rf ./Python-2.7.18.tgz
-
-  (cd ./Python-2.7.18 && ./configure --prefix=$PY_DIR)
-  (cd ./Python-2.7.18 && make)
-  (cd ./Python-2.7.18 && make install)
-  rm -rf ./Python-2.7.18
-
-  sudo ln -s $PY_DIR/bin/python /usr/local/bin/python
-fi
