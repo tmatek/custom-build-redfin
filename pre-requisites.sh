@@ -9,7 +9,6 @@ export CCACHE_DIR="$PWD/ccache"
 export USE_CCACHE=1
 export CCACHE_EXEC="/usr/bin/ccache"
 export _JAVA_OPTIONS="-Xmx6g"  # helps prevent build from getting stuck
-# export CROSS_COMPILE="$PWD/toolchain/bin/aarch64-linux-android-"
 
 # create workspace
 mkdir -p $AOSP_DIR
@@ -35,9 +34,12 @@ sudo apt-get install -y libssl-dev
 sudo apt-get install -y android-sdk-build-tools
 
 # install repo tool
-curl https://storage.googleapis.com/git-repo-downloads/repo > ./repo
-sudo chmod a+x ./repo
-sudo mv ./repo /usr/local/bin
+if [ ! $(which repo) ]
+then
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ./repo
+  sudo chmod a+x ./repo
+  sudo mv ./repo /usr/local/bin
+fi
 
 # configure git
 git config --global user.name "Redfin Builder"
