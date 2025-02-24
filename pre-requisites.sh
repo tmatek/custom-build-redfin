@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export DIST_DIR="$PWD/dist"
 export AOSP_DIR="$PWD/aosp"
 export KERNEL_DIR="$PWD/kernel"
 export LOGS_DIR="$PWD/logs"
@@ -11,6 +12,7 @@ export CCACHE_EXEC="/usr/bin/ccache"
 export _JAVA_OPTIONS="-Xmx6g"  # helps prevent build from getting stuck
 
 # create workspace
+mkdir -p $DIST_DIR
 mkdir -p $AOSP_DIR
 mkdir -p $KERNEL_DIR
 mkdir -p $LOGS_DIR

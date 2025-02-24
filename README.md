@@ -36,8 +36,14 @@ Then build AOSP:
 build-aosp.sh
 ```
 
-Finally its time to sign the build with a custom release key:
+Its time to sign the build with a custom release key:
 
 ```bash
 sign-build.sh
+```
+
+Finally, package everything up, ready to flash:
+
+```bash
+package.sh
 ```
