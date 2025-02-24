@@ -32,9 +32,6 @@ sudo apt-get install -y ccache rsync libncurses5 python-is-python3
 # required for building kernel
 sudo apt-get install -y libssl-dev
 
-# required for signing builds
-sudo apt-get install -y android-sdk-build-tools
-
 # install repo tool
 if [ ! $(which repo) ]
 then
