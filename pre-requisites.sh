@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export OUT_DIR="$PWD/out"
 export AOSP_DIR="$PWD/aosp"
 export KERNEL_DIR="$PWD/kernel"
 export LOGS_DIR="$PWD/logs"
@@ -10,9 +9,9 @@ export CCACHE_DIR="$PWD/ccache"
 export USE_CCACHE=1
 export CCACHE_EXEC="/usr/bin/ccache"
 export _JAVA_OPTIONS="-Xmx6g"  # helps prevent build from getting stuck
+# export CROSS_COMPILE="$PWD/toolchain/bin/aarch64-linux-android-"
 
 # create workspace
-mkdir -p $OUT_DIR
 mkdir -p $AOSP_DIR
 mkdir -p $KERNEL_DIR
 mkdir -p $LOGS_DIR
@@ -28,6 +27,9 @@ sudo apt-get install -y git-core gnupg flex bison build-essential \
 
 # not mentioned in AOSP build guide
 sudo apt-get install -y ccache rsync libncurses5
+
+# required for building kernel
+sudo apt-get install -y libssl-dev
 
 # required for signing builds
 sudo apt-get install -y android-sdk-build-tools

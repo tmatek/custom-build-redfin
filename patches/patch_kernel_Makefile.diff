@@ -1,0 +1,11 @@
+diff --git a/Makefile b/Makefile
+index 0bf94c277cac..84cfde1d9db3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1897,3 +1897,6 @@ FORCE:
+ # Declare the contents of the PHONY variable as phony.  We keep that
+ # information in a variable so we can use it in if_changed and friends.
+ .PHONY: $(PHONY)
++
++# https://groups.google.com/g/clang-built-linux/c/RbwKbwkBok8/m/rGUo8gUWBgAJ
++CLANG_FLAGS	+= --prefix=$(GCC_TOOLCHAIN_DIR)$(notdir $(CROSS_COMPILE))
