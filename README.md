@@ -46,4 +46,5 @@ Finally, package everything up, ready to flash:
 
 ```bash
 package.sh
+# output is in dist/ folder
 ```
