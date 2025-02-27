@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source $AOSP_DIR/build/envsetup.sh
-(cd $AOSP_DIR && lunch aosp_redfin-user && make otatools)
+(cd $AOSP_DIR && lunch $DEVICE_CONFIG && make otatools)
 
 BASE=$(mktemp -d)
 
