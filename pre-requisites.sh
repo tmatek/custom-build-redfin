@@ -10,7 +10,6 @@ export CCACHE_DIR="$PWD/ccache"
 export USE_CCACHE=1
 export CCACHE_EXEC="/usr/bin/ccache"
 export _JAVA_OPTIONS="-Xmx6g"  # helps prevent build from getting stuck
-export DEVICE_CONFIG="aosp_redfin-user"
 
 # create workspace
 mkdir -p $DIST_DIR
