@@ -1,5 +1,5 @@
 diff --git a/aosp_redfin.mk b/aosp_redfin.mk
-index 25756bc..7ede74b 100644
+index 25756bc..39abf03 100644
 --- a/aosp_redfin.mk
 +++ b/aosp_redfin.mk
 @@ -43,8 +43,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
@@ -8,7 +8,26 @@ index 25756bc..7ede74b 100644
  $(call inherit-product, device/google/redfin/device-redfin.mk)
 -$(call inherit-product-if-exists, vendor/google_devices/redfin/proprietary/device-vendor.mk)
 -$(call inherit-product-if-exists, vendor/google_devices/redfin/prebuilts/device-vendor-redfin.mk)
-+$(call inherit-product-if-exists, vendor/google/redfin/device-vendor.mk)
++$(call inherit-product, vendor/google/redfin/device-vendor.mk)
  
  # Exclude features that are not available on AOSP devices.
  PRODUCT_COPY_FILES += \
+@@ -53,6 +52,12 @@ PRODUCT_COPY_FILES += \
+ # Don't build super.img.
+ PRODUCT_BUILD_SUPER_PARTITION := false
+ 
++# Do build vendor.img
++ENABLE_VENDOR_IMAGE := true
++BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824 # 1GB
++BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
++TARGET_COPY_OUT_VENDOR := vendor
++
+ # b/113232673 STOPSHIP deal with Qualcomm stuff later
+ # PRODUCT_RESTRICT_VENDOR_FILES := all
+ 
+@@ -60,4 +65,4 @@ PRODUCT_MANUFACTURER := Google
+ PRODUCT_BRAND := Android
+ PRODUCT_NAME := aosp_redfin
+ PRODUCT_DEVICE := redfin
+-PRODUCT_MODEL := AOSP on redfin
++PRODUCT_MODEL := Pixel 5
