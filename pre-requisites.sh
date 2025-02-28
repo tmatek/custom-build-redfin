@@ -47,3 +47,10 @@ git config --global color.ui false
 
 # setup compiler cache
 ccache -M 50G
+
+# setup AOSP config
+set -a
+source $AOSP_DIR/build/envsetup.sh
+set +a
+
+TOP=$AOSP_DIR lunch aosp_redfin-user
