@@ -819,6 +819,8 @@ vendor/etc/vintf/manifest/manifest_input.classifier-service.xml
 vendor/etc/vintf/manifest/manifest_wifi_ext.xml
 vendor/etc/vintf/manifest/rebootescrow-citadel.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
+vendor/etc/vintf/compatibility_matrix.xml
+vendor/etc/vintf/manifest.xml
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 vendor/etc/xtra_root_cert.pem
