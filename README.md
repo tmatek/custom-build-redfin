@@ -18,12 +18,6 @@ Then fetch the kernel + AOSP repos:
 repo-sync.sh
 ```
 
-Extract proprietary blobs from factory image:
-
-```bash
-prop-blobs.sh
-```
-
 Next apply custom patches to the repos:
 
 ```bash
