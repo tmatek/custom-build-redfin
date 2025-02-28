@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git -C $AOSP_DIR/device/google/redfin restore aosp_redfin.mk
+
 source $AOSP_DIR/build/envsetup.sh
 (cd $AOSP_DIR && lunch $DEVICE_CONFIG && make otatools)
 
@@ -35,3 +37,6 @@ sed -i 's/qulacomm/qualcomm/' $AOSP_DIR/vendor/google/redfin/proprietary/product
 
 sed -i -e '/<?xml/d' -e '1i <?xml version="1.0" encoding="UTF-8"?>' $AOSP_DIR/vendor/google/redfin/proprietary/vendor/etc/data/netmgr_config.xml
 sed -i -e '/<?xml/d' -e '1i <?xml version="1.0" encoding="UTF-8"?>' $AOSP_DIR/vendor/google/redfin/proprietary/vendor/etc/data/dsi_config.xml
+
+# patch location of proprietary blobs
+git -C $AOSP_DIR/device/google/redfin apply $PWD/patches/patch_redfin_device_mkfile.diff
