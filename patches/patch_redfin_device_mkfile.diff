@@ -8,7 +8,7 @@ index 25756bc..7ede74b 100644
  $(call inherit-product, device/google/redfin/device-redfin.mk)
 -$(call inherit-product-if-exists, vendor/google_devices/redfin/proprietary/device-vendor.mk)
 -$(call inherit-product-if-exists, vendor/google_devices/redfin/prebuilts/device-vendor-redfin.mk)
-+$(call inherit-product-if-exists, vendor/google/redfin/device-vendor.mk)
++$(call inherit-product-if-exists, vendor/google/redfin/proprietary/device-vendor.mk)
  
  # Exclude features that are not available on AOSP devices.
  PRODUCT_COPY_FILES += \
