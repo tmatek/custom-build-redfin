@@ -27,11 +27,3 @@ done
 cp $BASE/redfin-rq3a.211001.001/radio-redfin-g7250-00132-210419-b-7294132.img $AOSP_DIR/vendor/google/redfin/proprietary/radio.img
 cp $BASE/redfin-rq3a.211001.001/bootloader-redfin-r3-0.3-7241848.img $AOSP_DIR/vendor/google/redfin/proprietary/bootloader.img
 cp -a ./patches/vendor-redfin/. $AOSP_DIR/vendor/google/redfin/
-
-# time to fix errors in proprietary blobs
-# https://github.com/LineageOS/android_device_google_redfin/blob/lineage-18.1/extract-files.sh
-sed -i 's/xml version="2.0"/xml version="1.0"/' $AOSP_DIR/vendor/google/redfin/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
-sed -i 's/qulacomm/qualcomm/' $AOSP_DIR/vendor/google/redfin/proprietary/product/etc/sysconfig/nexus.xml
-
-sed -i -e '/<?xml/d' -e '1i <?xml version="1.0" encoding="UTF-8"?>' $AOSP_DIR/vendor/google/redfin/proprietary/vendor/etc/data/netmgr_config.xml
-sed -i -e '/<?xml/d' -e '1i <?xml version="1.0" encoding="UTF-8"?>' $AOSP_DIR/vendor/google/redfin/proprietary/vendor/etc/data/dsi_config.xml
