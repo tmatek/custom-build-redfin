@@ -818,24 +818,6 @@ dex_import {
 }
 
 prebuilt_etc_xml {
-	name: "manifest",
-	owner: "google",
-	src: "proprietary/vendor/etc/vintf/manifest.xml",
-	filename_from_src: true,
-	sub_dir: "vintf",
-	soc_specific: true,
-}
-
-prebuilt_etc_xml {
-	name: "compatibility_matrix",
-	owner: "google",
-	src: "proprietary/vendor/etc/vintf/compatibility_matrix.xml",
-	filename_from_src: true,
-	sub_dir: "vintf",
-	soc_specific: true,
-}
-
-prebuilt_etc_xml {
 	name: "android.hardware.identity.strongbox",
 	owner: "google",
 	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.identity.strongbox.xml",
