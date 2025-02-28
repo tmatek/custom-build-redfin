@@ -6,7 +6,8 @@ curl "https://dl.google.com/dl/android/aosp/redfin-rq3a.211001.001-factory-23f4c
 (cd $BASE && unzip redfin-factory.zip)
 (cd $BASE/redfin-rq3a.211001.001 && unzip image-redfin-rq3a.211001.001.zip)
 
-(cd $AOSP_DIR && make otatools)
+source $AOSP_DIR/build/envsetup.sh
+(cd $AOSP_DIR && lunch aosp_redfin-user)
 
 for image in vendor system_ext product
 do

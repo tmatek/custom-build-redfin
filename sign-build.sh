@@ -12,7 +12,9 @@ done
 # extract public key for AVB
 openssl pkcs8 -in $KEYS_DIR/releasekey.pk8 -inform DER -out $KEYS_DIR/releasekey.key -nocrypt
 
-(cd $AOSP_DIR && ./out/host/linux-x86/bin/sign_target_files_apks -o --default_key_mappings $KEYS_DIR \
+source $AOSP_DIR/build/envsetup.sh
+
+(cd $AOSP_DIR && lunch aosp_redfin-user && ./out/host/linux-x86/bin/sign_target_files_apks -o --default_key_mappings $KEYS_DIR \
   ./out/target/product/redfin/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip ./out/signed-target-files.zip > $LOGS_DIR/sign-build.txt 2>&1 &)
 
 echo "Signing started. Logs in $LOGS_DIR/sign-build.txt"
