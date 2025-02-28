@@ -9,6 +9,14 @@ curl "https://dl.google.com/dl/android/aosp/redfin-rq3a.211001.001-factory-23f4c
 source $AOSP_DIR/build/envsetup.sh
 (cd $AOSP_DIR && lunch aosp_redfin-user)
 
+# prepare Makefile
+MAKEFILE=$AOSP_DIR/vendor/google/redfin/device-vendor.mk
+
+echo "PRODUCT_SOONG_NAMESPACES += \" >> $MAKEFILE
+echo "    vendor/google/redfin" >> $MAKEFILE
+echo -e "\n" >> $MAKEFILE
+echo "PRODUCT_COPY_FILES += \" >> $MAKEFILE
+
 for image in vendor system_ext product
 do
   (cd $BASE/redfin-rq3a.211001.001 && $AOSP_DIR/out/host/linux-x86/bin/simg2img $image.img $image.raw.img)
