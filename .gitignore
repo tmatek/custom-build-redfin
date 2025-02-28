@@ -5,4 +5,4 @@ logs/
 aosp/
 kernel/
 ccache/
-python2/
+dist/
