@@ -17,8 +17,8 @@ do
 
   for file in $(grep "^${image}" ./redfin-proprietary-files.txt)
   do
-    mkdir -p "$AOSP_DIR/vendor/google/redfin/proprietary/$(dirname $file)"
-    cp "$BASE/$file" "$AOSP_DIR/vendor/google/redfin/proprietary/$(dirname $file)"
+    mkdir -p "$AOSP_DIR/vendor/google/redfin/proprietary/$file"
+    cp "$BASE/$file" "$AOSP_DIR/vendor/google/redfin/proprietary/$file"
   done
 
   sudo umount $BASE/$image
