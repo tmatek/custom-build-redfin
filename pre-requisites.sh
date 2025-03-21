@@ -11,6 +11,8 @@ export USE_CCACHE=1
 export CCACHE_EXEC="/usr/bin/ccache"
 export _JAVA_OPTIONS="-Xmx6g"  # helps prevent build from getting stuck
 
+export PATH=$AOSP_DIR/out/host/linux-x86/bin:$PATH
+
 # create workspace
 mkdir -p $DIST_DIR
 mkdir -p $AOSP_DIR
